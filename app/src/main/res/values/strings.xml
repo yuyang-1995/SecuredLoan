@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Secured loan</string>
+
+    <string name="please_input_loan_num">Harap masukkan jumlah pinjaman Anda</string>
+    <string name="please_input_mobile_phone">Harap masukkan nomor telepon Anda</string>
+    <string name="please_input_password">Silahkan set password login anda Log in</string>
+    <string name="input_real_loan_num">Jumlah pinjaman harus antara Rp 100.000 - Rp 20.000.000</string>
+    <string name="input_real_telephone">Silahkan masukkan nomor telepon yang benar</string>
+    <string name="input_real_password">Panjang kata sandi adalah 6 ～ 16</string>
+    <string name="about">Tentang</string>
+    <string name="reclicl_exit">Klik sekali lagi untuk keluar</string>
+    <string name="login">Login</string>
+    <string name="data_loading">memuat data</string>
+    <string name="no_network">Tidak dapat terhubung dengan jaringan Internet</string>
+    <string name="server_unconnect">Server tidak dapat terhubung, silahkan periksa koneksi internet Anda</string>
+    <string name="loan">Ajukan</string>
+    <string name="loan_amount_max">RP %1$s</string>
+    <string name="rate_interest">Bunga harian %1$s</string>
+    <string name="pass_num">Lulus %1$s</string>
+    <string name="my">Saya</string>
+    <string name="protocol">Perjanjian Privasi dan Otorisasi kami</string>
+    <string name="detail_score">Lulus %1$s Kecepatan %2$s Penagihan %3$s</string>
+    <string name="pembayaran">Pembayaran</string>
+    <string name="pinjaman">Pinjaman</string>
+    <string name="bunga">Bunga</string>
+    <string name="kondisi_aplikasi">Kondisi aplikasi</string>
+    <string name="bahan_yang_dibutuhkan">Bahan yang dibutuhkan</string>
+    <string name="deskripsi_produk">Deskripsi Produk</string>
+    <string name="down">Download App</string>
+    <string name="amount">RP %1$s</string>
+    <string name="times">%1$s Hari</string>
+    <string name="version">V %1$s</string>
+    <string name="continues">Continue</string>
+    <string name="cancle">Cancle</string>
+    <string name="notification_error_ssl_cert_invalid">Sertifikat ssl tidak valid</string>
+
+
+</resources>

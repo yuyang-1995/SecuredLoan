@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp"
+    android:background="@color/color_white"
+    android:id="@+id/ll_item">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="12dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TangBull"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_main"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/iv_logo"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/shape_stroke_theme_button"
+            android:textColor="@color/color_main"
+            android:text="@string/loan"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/color_fd9e02"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/color_4b4b4b"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="@color/color_e5e5e5"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="36dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/color_4b4b4b"
+                android:layout_weight="1"
+                android:text="jumlah maksimum"/>
+
+            <TextView
+                android:id="@+id/tv_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/color_4b4b4b"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
