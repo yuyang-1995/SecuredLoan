@@ -14,6 +14,7 @@ import java.io.File;
 
 
 public class AppUtils {
+
     /**
      * 获取APP的版本号 失败为null
      *

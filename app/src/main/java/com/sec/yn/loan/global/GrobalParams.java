@@ -20,12 +20,6 @@ public class GrobalParams {
 
     }
 
-    /**
-     * 拼接参数
-     * @param key
-     * @param value
-     * @return
-     */
     public GrobalParams setParams(String key, String value){
         String endodeKey = key;
         String encodeValue = value;
@@ -33,12 +27,6 @@ public class GrobalParams {
         return this;
     }
 
-    /**
-     *
-     * @param key
-     * @param value
-     * @return
-     */
     public GrobalParams setParams(String key, int value){
         String endodeKey = key;
         int encodeValue = value;
@@ -46,12 +34,6 @@ public class GrobalParams {
         return this;
     }
 
-    /**
-     * 拼接参数
-     * @param key
-     * @param value
-     * @return
-     */
     public GrobalParams setListParam(String key, String value){
         String endodeKey = key;
         String encodeValue = value;
@@ -59,12 +41,6 @@ public class GrobalParams {
         return this;
     }
 
-    /**
-     * 拼接参数
-     * @param key
-     * @param value
-     * @return
-     */
     public GrobalParams setListParam(String key, int value){
         String endodeKey = key;
         int encodeValue = value;
@@ -72,10 +48,6 @@ public class GrobalParams {
         return this;
     }
 
-    /**
-     * 返回最终的拼接 字段
-     * @return
-     */
     public String build(){
         String str = sb.toString();
         if(str.endsWith(",")){

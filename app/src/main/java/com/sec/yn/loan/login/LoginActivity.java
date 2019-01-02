@@ -15,7 +15,6 @@ import android.widget.Button;
 import com.sec.yn.loan.R;
 import com.sec.yn.loan.bean.ResponseBean;
 import com.sec.yn.loan.global.GlobalApi;
-import com.sec.yn.loan.global.GlobalApp;
 import com.sec.yn.loan.global.GlobalData;
 import com.sec.yn.loan.main.MainActivity;
 import com.sec.yn.loan.ui.LoadingDialog;

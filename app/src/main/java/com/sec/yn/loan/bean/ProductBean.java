@@ -5,45 +5,6 @@ import java.util.List;
 public class ProductBean {
 
 
-    /**
-     * id : 34
-     * name : Easy Pinjam
-     * package_name :
-     * logo : http://inter.jiehuahua.com/uploads/vstore/20180305/1520236053_3075.png
-     * lulus_score : 4.8
-     * kecepatan_score : 4.0
-     * penagihan_score : 4.6
-     * google_score : 4.6
-     * google_num : 5761
-     * rate_interest : 0.07
-     * first_plan : 0
-     * loan_amount_min : 630000
-     * loan_amount_max : 630000
-     * loan_days_min : 7
-     * loan_days_max : 7
-     * loan_days_view :
-     * conditions_apply : 1. isi informasi pribadi:
-     Nama/ID Id/tanggal kelahiran/email/residence City dan tingkat status/pendidikan alamat/kode pos/perkawinan
-     Informasi perusahaan:
-     Nama perusahaan alamat/perusahaan telepon, industri dan pasca
-     Kontak darurat orang:
-     2 orang kontak darurat yang termasuk hubungan/nama/telepon
-     2. upload ID/Live pengakuan
-     3. akun mengikat:
-     Faceebook/linkedin/gojek/bcabank empat pilih
-     4. bank kartu nomor mengikat
-     * material_requested : 1.Faceebook/linkedin/gojek/bcabank empat pilih
-     2.bank kartu nomor mengikat
-     * declare : Easy Pinjam adalah ponsel aplikasi pinjaman, karena kebutuhan pasar untuk meluncurkan 【630000 rupiah, 7 hari pendek siklus】 darurat pinjaman program, dengan perkembangan besar data keuangan angin kontrol model untuk memungkinkan pengguna untuk melewatkan meninjau aplikasi pinjaman dari proses yang kompleks, bagi pengguna untuk membuat yang paling nyaman dan mudah untuk meminjam mudah untuk kembali platform pinjaman.
-     * url :
-     * appsflyer_url : https://app.appsflyer.com/com.tupulian.walletpicker.indonesia?pid=miyi_int
-     * type : 1
-     * loan_days : ["7"]
-     * score : 4.5
-     * google_comment : []
-     * id_list : ["24","34","4","22","26","33","12","16","25","23"]
-     */
-
     private String id;
     private String name;
     private String package_name;

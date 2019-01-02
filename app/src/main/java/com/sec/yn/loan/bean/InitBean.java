@@ -5,17 +5,6 @@ import java.util.List;
 public class InitBean {
 
 
-    /**
-     * email : Hubungi kami melalui email:service@jrweid.com
-     * product_hint : 0
-     * product_hint_time : 3
-     * product_dialog : 0
-     * product_dialog_time : 3
-     * cate_list : [{"id":"1","name":"PINJAMAN"},{"id":"2","name":"UANG TUNAI"},{"id":"3","name":"CICILAN"}]
-     * hot_search : [{"product_name":"Doctor Rupiah","product_id":"23"},{"product_name":"GoCash","product_id":"22"},{"product_name":"Rupiah cash","product_id":"21"},{"product_name":"easycash","product_id":"24"}]
-     * privacy_policy :
-     */
-
     private String email;
     private String product_hint;
     private String product_hint_time;
@@ -90,10 +79,6 @@ public class InitBean {
     }
 
     public static class CateListBean {
-        /**
-         * id : 1
-         * name : PINJAMAN
-         */
 
         private String id;
         private String name;
@@ -116,10 +101,6 @@ public class InitBean {
     }
 
     public static class HotSearchBean {
-        /**
-         * product_name : Doctor Rupiah
-         * product_id : 23
-         */
 
         private String product_name;
         private String product_id;
