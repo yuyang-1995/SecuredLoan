@@ -18,6 +18,7 @@ import com.sec.yn.loan.global.GlobalApi;
 import com.sec.yn.loan.global.GlobalData;
 import com.sec.yn.loan.main.MainActivity;
 import com.sec.yn.loan.ui.LoadingDialog;
+import com.sec.yn.loan.util.LogUtil;
 import com.sec.yn.loan.util.NetUtil;
 import com.sec.yn.loan.util.SharePreUtil;
 import com.sec.yn.loan.util.ToastUtil;
@@ -189,9 +190,11 @@ public class LoginActivity extends AppCompatActivity {
                 LoadingDialog.dismiss(LoginActivity.this);
                 if(null != response.body()){
                     if(response.body().getCode() == 0){
+                        LogUtil.e("result-->" + response.body().toString());
                         SharePreUtil.putString(LoginActivity.this, GlobalData.MOBILE,
                                 mEtMobilePhone.getText().toString().trim());
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
                     }else{
                         ToastUtil.showCenter(LoginActivity.this, response.body().getMsg());
                     }

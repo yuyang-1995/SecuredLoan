@@ -22,6 +22,7 @@ import com.sec.yn.loan.product.ProductFragment;
 import com.sec.yn.loan.ui.LoadingDialog;
 import com.sec.yn.loan.ui.ProtocolDialog;
 import com.sec.yn.loan.util.DesUtils;
+import com.sec.yn.loan.util.LogUtil;
 import com.sec.yn.loan.util.SharePreUtil;
 import com.sec.yn.loan.util.ToastUtil;
 
@@ -89,10 +90,13 @@ public class MainActivity extends AppCompatActivity {
                 LoadingDialog.dismiss(MainActivity.this);
                 if(null != response.body()){
                     if(response.body().getCode() == 0){
-                        String data = response.body().getData();
+                        LogUtil.e("result-->" + response.body().toString());
+                        String result = response.body().getData();
+                        LogUtil.e("result--->" + result);
                         try{
-                            data = DesUtils.decode(data, response.body().getIv());
-                            mInitBean = new Gson().fromJson(data, InitBean.class);
+                            result = DesUtils.decode(result, response.body().getIv());
+                            LogUtil.e("result--->" + result);
+                            mInitBean = new Gson().fromJson(result, InitBean.class);
                             setUI();
                         }catch (Exception e){
                             e.printStackTrace();
@@ -116,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUI(){
 
+        LogUtil.e("data--->" + mInitBean);
         if(null != mInitBean){
             if(null != mInitBean.getCate_list() && mInitBean.getCate_list().size() > 0){
 

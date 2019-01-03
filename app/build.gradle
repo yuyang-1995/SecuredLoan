@@ -35,7 +35,7 @@ android {
                 shrinkResources true
                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
                 signingConfig signingConfigs.release
-                debuggable false
+                debuggable true
                 jniDebuggable false
                 android.applicationVariants.all { variant ->
                     variant.outputs.all {

@@ -89,3 +89,7 @@
 -keep interface okhttp3.** { *; }
 -dontwarn okhttp3.**
 
+
+
+-keep public class com.sec.yn.loan.bean.** {*;}
+

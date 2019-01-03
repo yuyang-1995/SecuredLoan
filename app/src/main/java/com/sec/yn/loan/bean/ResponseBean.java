@@ -39,4 +39,15 @@ public class ResponseBean {
     public void setData(String data) {
         this.data = data;
     }
+
+
+    @Override
+    public String toString() {
+        return "ResponseBean{" +
+                "iv='" + iv + '\'' +
+                ", code=" + code +
+                ", msg='" + msg + '\'' +
+                ", data='" + data + '\'' +
+                '}';
+    }
 }
