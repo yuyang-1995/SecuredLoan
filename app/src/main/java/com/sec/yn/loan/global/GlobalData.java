@@ -11,6 +11,7 @@ public class GlobalData {
     public static final String MOBILE = "mobile_phone";
     public static final String PROTOCOL= "protocol";
     public static final String EMAIL= "email";
+    public static final String IS_SHOW_POLICY = "is_show_policy";
 
     /**
      * 获取IV

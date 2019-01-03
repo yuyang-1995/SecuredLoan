@@ -22,7 +22,7 @@ public class GlobalApp extends Application {
 
         mContext = this;
 
-        LogUtil.isDebug = true;
+        LogUtil.isDebug = false;
 
 
 

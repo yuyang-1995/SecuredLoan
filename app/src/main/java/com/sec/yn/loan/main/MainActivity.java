@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -19,6 +20,7 @@ import com.sec.yn.loan.global.GlobalApi;
 import com.sec.yn.loan.global.GlobalData;
 import com.sec.yn.loan.product.ProductFragment;
 import com.sec.yn.loan.ui.LoadingDialog;
+import com.sec.yn.loan.ui.ProtocolDialog;
 import com.sec.yn.loan.util.DesUtils;
 import com.sec.yn.loan.util.SharePreUtil;
 import com.sec.yn.loan.util.ToastUtil;
@@ -126,6 +128,16 @@ public class MainActivity extends AppCompatActivity {
 
             SharePreUtil.putString(MainActivity.this, GlobalData.EMAIL, mInitBean.getEmail());
             SharePreUtil.putString(MainActivity.this, GlobalData.PROTOCOL, mInitBean.getPrivacy_policy());
+
+            if (!TextUtils.isEmpty(mInitBean.getPrivacy_policy()) &&
+                    !SharePreUtil.getBoolean(MainActivity.this, GlobalData.IS_SHOW_POLICY, false)) {
+                ProtocolDialog prolicyDialog = new ProtocolDialog();
+                Bundle bundle = new Bundle();
+                bundle.putString("url", mInitBean.getPrivacy_policy());
+                prolicyDialog.setArguments(bundle);
+                prolicyDialog.show(getSupportFragmentManager(), "ProtocolDialog");
+            }
+
         }
     }
 

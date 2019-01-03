@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -165,12 +166,8 @@ public class ProductFragment extends Fragment {
                     .load(productBean.getLogo())
                     .into(viewHolder.mIvLogo);
             viewHolder.mTvTitle.setText(StringUtil.getText(productBean.getName()));
-            viewHolder.mTvAmount.setText(mContext.getString(R.string.loan_amount_max,
-                    StringUtil.getText(StringUtil.formatString(Integer.parseInt(productBean.getLoan_amount_max())))));
-            viewHolder.mTvRate.setText(mContext.getString(R.string.rate_interest,
-                    StringUtil.getText(productBean.getRate_interest())));
-            viewHolder.mTvPass.setText(mContext.getString(R.string.pass_num,
-                    StringUtil.getText(productBean.getPass_num())));
+            viewHolder.mtvMsg.setText(Html.fromHtml(mContext.getString(R.string.msg, StringUtil.getText(StringUtil.formatString(Integer.parseInt(productBean.getLoan_amount_max()))),
+                    StringUtil.getText(productBean.getRate_interest()) + "%", StringUtil.getText(productBean.getPass_num()))));
             viewHolder.mLlItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -193,18 +190,14 @@ public class ProductFragment extends Fragment {
             private LinearLayout mLlItem;
             private ImageView mIvLogo;
             private TextView mTvTitle;
-            private TextView mTvAmount;
-            private TextView mTvRate;
-            private TextView mTvPass;
+            private TextView mtvMsg;
 
             public ViewHolder(View view){
                 super(view);
                 mLlItem = view.findViewById(R.id.ll_item);
                 mIvLogo = view.findViewById(R.id.iv_logo);
                 mTvTitle = view.findViewById(R.id.tv_title);
-                mTvAmount = view.findViewById(R.id.tv_amount);
-                mTvRate = view.findViewById(R.id.tv_rate);
-                mTvPass = view.findViewById(R.id.tv_pass);
+                mtvMsg = view.findViewById(R.id.tv_msg);
             }
 
         }
