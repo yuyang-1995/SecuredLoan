@@ -1,4 +1,4 @@
-package com.sec.yn.loan;
+package com.rural.loans.rupiah;
 
 import org.junit.Test;
 

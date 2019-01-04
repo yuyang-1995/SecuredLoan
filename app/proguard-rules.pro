@@ -91,5 +91,5 @@
 
 
 
--keep public class com.sec.yn.loan.bean.** {*;}
+-keep public class com.rural.loans.rupiah.bean.** {*;}
 

@@ -7,7 +7,7 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.sec.yn.loan"
+        applicationId "com.rural.loans.rupiah"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 100
@@ -39,7 +39,7 @@ android {
                 jniDebuggable false
                 android.applicationVariants.all { variant ->
                     variant.outputs.all {
-                        outputFileName = "Secured_loan_Cs_${defaultConfig.versionCode}_${releaseTime()}.apk"
+                        outputFileName = "Rural_loans_Ff_${defaultConfig.versionCode}_${releaseTime()}.apk"
                     }
                 }
 
