@@ -6,21 +6,18 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.rural.loans.rupiah.R;
-import com.rural.loans.rupiah.global.GlobalApi;
-import com.rural.loans.rupiah.global.GlobalApp;
-import com.rural.loans.rupiah.global.GlobalData;
+import com.rural.loans.rupiah.global.RuralApp;
+import com.rural.loans.rupiah.global.Constant;
 import com.rural.loans.rupiah.util.SharePreUtil;
 
 
@@ -83,7 +80,7 @@ public class ProtocolDialog extends DialogFragment {
         mTvSure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharePreUtil.putBoolean(GlobalApp.mContext, GlobalData.IS_SHOW_POLICY, true);
+                SharePreUtil.putBoolean(RuralApp.mContext, Constant.IS_SHOW_POLICY, true);
                 dismiss();
             }
         });

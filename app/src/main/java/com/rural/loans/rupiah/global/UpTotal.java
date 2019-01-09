@@ -12,15 +12,15 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class GlobalUpTotal {
+public class UpTotal {
 
 
     /**
      * 上传激活
      */
     public static void pushNewDevice(Context mContext){
-        String iv = GlobalData.getIV();
-        String data = GlobalData
+        String iv = Constant.getIV();
+        String data = Constant
                 .getParams(iv)
                 .setParams("udid", DeviceUtil.getUniqueId(mContext))
                 .setParams("type", "1")
@@ -34,8 +34,8 @@ public class GlobalUpTotal {
      */
     public static void upProductPosition(Context mContext, String cid, String id,
                                          int cPosition, int position){
-        String iv = GlobalData.getIV();
-        String data = GlobalData
+        String iv = Constant.getIV();
+        String data = Constant
                 .getParams(iv)
                 .setParams("udid", DeviceUtil.getUniqueId(mContext))
                 .setParams("type", "4")
@@ -52,8 +52,8 @@ public class GlobalUpTotal {
      * @param second
      */
     public static void upResidenceTime(Context mContext, long second){
-        String iv = GlobalData.getIV();
-        String data = GlobalData
+        String iv = Constant.getIV();
+        String data = Constant
                 .getParams(iv)
                 .setParams("udid", DeviceUtil.getUniqueId(mContext))
                 .setParams("type", "2")
@@ -70,8 +70,8 @@ public class GlobalUpTotal {
      * @param id
      */
     public static void upProducAccess(Context mContext, String id){
-        String iv = GlobalData.getIV();
-        String data = GlobalData
+        String iv = Constant.getIV();
+        String data = Constant
                 .getParams(iv)
                 .setParams("udid", DeviceUtil.getUniqueId(mContext))
                 .setParams("type", "7")
@@ -83,10 +83,10 @@ public class GlobalUpTotal {
 
     private static void upData(String iv, String data){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GlobalApi.BASE_URL)
+                .baseUrl(RuralApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        GlobalUpTotalApi globalUpTotalApi = retrofit.create(GlobalUpTotalApi.class);
+        UpTotalApi globalUpTotalApi = retrofit.create(UpTotalApi.class);
 
         globalUpTotalApi.upTotal(iv, data).enqueue(new Callback<ResponseBean>() {
             @Override

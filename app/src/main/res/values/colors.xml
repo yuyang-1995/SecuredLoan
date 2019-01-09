@@ -5,8 +5,9 @@
     <color name="colorAccent">#D81B60</color>
 
 
-    <color name="color_main">#358af7</color>
+    <color name="color_main">#01e06d</color>
     <color name="color_white">#ffffff</color>
+    <color name="color_f0ffff">#f0ffff</color>
     <color name="color_4b4b4b">#4b4b4b</color>
     <color name="color_808080">#808080</color>
     <color name="color_e5e5e5">#e5e5e5</color>

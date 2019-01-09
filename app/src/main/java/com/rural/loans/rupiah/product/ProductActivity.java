@@ -5,24 +5,25 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.rural.loans.rupiah.R;
-import com.rural.loans.rupiah.bean.InitBean;
 import com.rural.loans.rupiah.bean.ProductBean;
 import com.rural.loans.rupiah.bean.ResponseBean;
-import com.rural.loans.rupiah.global.GlobalApi;
-import com.rural.loans.rupiah.global.GlobalData;
-import com.rural.loans.rupiah.global.GlobalUpTotal;
-import com.rural.loans.rupiah.main.MainActivity;
+import com.rural.loans.rupiah.global.RuralApi;
+import com.rural.loans.rupiah.global.Constant;
+import com.rural.loans.rupiah.global.UpTotal;
 import com.rural.loans.rupiah.ui.LoadingDialog;
 import com.rural.loans.rupiah.util.AppUtils;
 import com.rural.loans.rupiah.util.DesUtils;
@@ -41,7 +42,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProductActivity extends AppCompatActivity {
 
-    private ImageView mIvBack;
+    private Toolbar mToolbar;
     private TextView mTvProductName;
     private ImageView mIvLogo;
     private ScrollView mScrollView;
@@ -55,6 +56,8 @@ public class ProductActivity extends AppCompatActivity {
     private TextView mTvCailiao;
     private TextView mTvShuoming;
     private TextView mTvDown;
+    private LinearLayout mLlDetail;
+    private TextView mTvDetail;
 
     private String productId;
 
@@ -78,7 +81,7 @@ public class ProductActivity extends AppCompatActivity {
 
     private void initActivity(){
 
-        mIvBack = findViewById(R.id.iv_back);
+        mToolbar = findViewById(R.id.toolbar);
         mTvProductName = findViewById(R.id.tv_product_name);
         mIvLogo = findViewById(R.id.iv_logo);
         mScrollView = findViewById(R.id.scrollView);
@@ -92,10 +95,12 @@ public class ProductActivity extends AppCompatActivity {
         mTvCailiao = findViewById(R.id.tv_cailiao);
         mTvShuoming = findViewById(R.id.tv_shuoming);
         mTvDown = findViewById(R.id.tv_down);
-        mIvBack.setOnClickListener(new View.OnClickListener() {
+        mLlDetail = findViewById(R.id.ll_detail);
+        mTvDetail = findViewById(R.id.tv_detail);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                onBack();
             }
         });
         mTvDown.setOnClickListener(new View.OnClickListener() {
@@ -105,27 +110,55 @@ public class ProductActivity extends AppCompatActivity {
             }
         });
 
+        mTvDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mScrollView.setVisibility(View.GONE);
+                mLlDetail.setVisibility(View.VISIBLE);
+            }
+        });
+        mLlDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mScrollView.setVisibility(View.VISIBLE);
+                mLlDetail.setVisibility(View.GONE);
+            }
+        });
+
         productId = getIntent().getStringExtra("productId");
 
-        GlobalUpTotal.upProducAccess(ProductActivity.this, productId);
+        UpTotal.upProducAccess(ProductActivity.this, productId);
 
         pullDetail();
 
     }
 
+    @Override
+    public void onBackPressed() {
+        onBack();
+    }
+
+    private void onBack(){
+        if(mLlDetail.getVisibility() == View.VISIBLE){
+            mLlDetail.setVisibility(View.GONE);
+            mScrollView.setVisibility(View.VISIBLE);
+        }else{
+            finish();
+        }
+    }
 
     private void pullDetail(){
 
         LoadingDialog.show(ProductActivity.this);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GlobalApi.BASE_URL)
+                .baseUrl(RuralApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ProductApi productApi = retrofit.create(ProductApi.class);
 
-        String iv = GlobalData.getIV();
-        String data = GlobalData.getParams(iv)
+        String iv = Constant.getIV();
+        String data = Constant.getParams(iv)
                 .setParams("id", productId)
                 .build();
 
@@ -290,13 +323,13 @@ public class ProductActivity extends AppCompatActivity {
         LoadingDialog.show(ProductActivity.this);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GlobalApi.BASE_URL)
+                .baseUrl(RuralApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ProductApi productApi = retrofit.create(ProductApi.class);
 
-        String iv = GlobalData.getIV();
-        String data = GlobalData.getParams(iv)
+        String iv = Constant.getIV();
+        String data = Constant.getParams(iv)
                 .setParams("id", productId)
                 .setParams("loan_amount", amount)
                 .setParams("loan_days", day)
@@ -315,7 +348,7 @@ public class ProductActivity extends AppCompatActivity {
                             intent.putExtra("packageName", mProductBean.getPackage_name());
                             intent.putExtra("loadUrl", mProductBean.getAppsflyer_url()
                                     + "&clickid=" + clickId
-                                    + "&&af_siteid=" + GlobalData.APP_NUMBER
+                                    + "&&af_siteid=" + Constant.APP_NUMBER
                                     + "&advertising_id=" + DeviceUtil.getUniqueId(ProductActivity.this));
                             startActivity(intent);
                         } else {

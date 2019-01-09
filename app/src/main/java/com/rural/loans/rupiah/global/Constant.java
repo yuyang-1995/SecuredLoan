@@ -4,7 +4,7 @@ import com.rural.loans.rupiah.util.DeviceUtil;
 import com.rural.loans.rupiah.util.SharePreUtil;
 import com.rural.loans.rupiah.util.StringUtil;
 
-public class GlobalData {
+public class Constant {
 
     public static final String APP_NUMBER = "Ff";
 
@@ -21,13 +21,13 @@ public class GlobalData {
         return StringUtil.getRandoms(8);
     }
 
-    public static GrobalParams getParams(String iv){
-        GrobalParams paramsManage = new GrobalParams(iv);
+    public static PostParams getParams(String iv){
+        PostParams paramsManage = new PostParams(iv);
         return paramsManage
                 .setParams("app_no", APP_NUMBER)
                 .setParams("channel", "Aa")
-                .setParams("mobile", SharePreUtil.getString(GlobalApp.mContext, MOBILE,
-                        DeviceUtil.getUniqueId(GlobalApp.mContext)))
+                .setParams("mobile", SharePreUtil.getString(RuralApp.mContext, MOBILE,
+                        DeviceUtil.getUniqueId(RuralApp.mContext)))
                 .setParams("lang", "id-id")
                 .setParams("time", String.valueOf(System.currentTimeMillis() / 1000));
     }

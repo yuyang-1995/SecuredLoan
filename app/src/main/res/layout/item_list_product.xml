@@ -53,12 +53,28 @@
     <TextView
         android:id="@+id/tv_msg"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:gravity="center_vertical"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
         android:textColor="@color/color_4b4b4b"
         android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:background="@color/color_f0ffff"
+        android:textSize="12sp"
+        android:textColor="@color/color_4b4b4b"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:ellipsize="end"/>
 
 
 </LinearLayout>

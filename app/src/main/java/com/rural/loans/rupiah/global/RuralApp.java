@@ -4,12 +4,11 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.rural.loans.rupiah.main.MainActivity;
 import com.rural.loans.rupiah.util.LogUtil;
 
-public class GlobalApp extends Application {
+public class RuralApp extends Application {
 
     public static Context mContext;
 
@@ -60,7 +59,7 @@ public class GlobalApp extends Application {
             public void onActivityDestroyed(Activity activity) {
                 endTime = endTime + System.currentTimeMillis() / 1000 - beginTime;
                 if(activity instanceof MainActivity){
-                    GlobalUpTotal.upResidenceTime(activity, endTime);
+                    UpTotal.upResidenceTime(activity, endTime);
                 }
             }
         });

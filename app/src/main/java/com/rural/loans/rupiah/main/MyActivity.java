@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rural.loans.rupiah.R;
-import com.rural.loans.rupiah.global.GlobalData;
+import com.rural.loans.rupiah.global.Constant;
 import com.rural.loans.rupiah.product.WebViewActivity;
 import com.rural.loans.rupiah.util.AppUtils;
 import com.rural.loans.rupiah.util.SharePreUtil;
@@ -44,14 +44,14 @@ public class MyActivity extends AppCompatActivity {
         mTvProtocol = findViewById(R.id.tv_protocol);
 
         mTvMobilePhone.setText(SharePreUtil.getString(MyActivity.this,
-                GlobalData.MOBILE, ""));
+                Constant.MOBILE, ""));
         mTvVersion.setText(getString(R.string.version, AppUtils.getVersionName(MyActivity.this)));
         mTvEmail.setVisibility(TextUtils.isEmpty(SharePreUtil.getString(MyActivity.this,
-                GlobalData.EMAIL, "")) ? View.GONE : View.VISIBLE);
+                Constant.EMAIL, "")) ? View.GONE : View.VISIBLE);
         mTvEmail.setText(SharePreUtil.getString(MyActivity.this,
-                GlobalData.EMAIL, ""));
+                Constant.EMAIL, ""));
         mTvProtocol.setVisibility(TextUtils.isEmpty(SharePreUtil.getString(MyActivity.this,
-                GlobalData.PROTOCOL, "")) ? View.GONE : View.VISIBLE);
+                Constant.PROTOCOL, "")) ? View.GONE : View.VISIBLE);
 
         mIvBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +65,7 @@ public class MyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MyActivity.this, WebViewActivity.class)
                         .putExtra("loadUrl", SharePreUtil.getString(MyActivity.this,
-                                GlobalData.PROTOCOL, "")));
+                                Constant.PROTOCOL, "")));
             }
         });
     }

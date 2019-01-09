@@ -14,8 +14,8 @@ import android.widget.Button;
 
 import com.rural.loans.rupiah.R;
 import com.rural.loans.rupiah.bean.ResponseBean;
-import com.rural.loans.rupiah.global.GlobalApi;
-import com.rural.loans.rupiah.global.GlobalData;
+import com.rural.loans.rupiah.global.RuralApi;
+import com.rural.loans.rupiah.global.Constant;
 import com.rural.loans.rupiah.main.MainActivity;
 import com.rural.loans.rupiah.ui.LoadingDialog;
 import com.rural.loans.rupiah.util.LogUtil;
@@ -143,8 +143,8 @@ public class LoginActivity extends AppCompatActivity {
                 if((Integer.parseInt(mEtLoanNum.getText().toString()) >= 100000
                         && Integer.parseInt(mEtLoanNum.getText().toString()) <= 20000000) &&
                         !TextUtils.isEmpty(mEtMobilePhone.getText().toString().trim()) &&
-                        (mEtPassword.getText().toString().trim().length() > 6 &&
-                                mEtPassword.getText().toString().trim().length() < 16)){
+                        (mEtPassword.getText().toString().trim().length() >= 6 &&
+                                mEtPassword.getText().toString().trim().length() <= 16)){
                     mBtnLogin.setBackgroundResource(R.drawable.shape_button);
                     mBtnLogin.setClickable(true);
                 }else{
@@ -171,13 +171,13 @@ public class LoginActivity extends AppCompatActivity {
         LoadingDialog.show(LoginActivity.this, R.string.login);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GlobalApi.BASE_URL)
+                .baseUrl(RuralApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         LoginApi loginApi = retrofit.create(LoginApi.class);
 
-        String iv = GlobalData.getIV();
-        String data = GlobalData.getParams(iv)
+        String iv = Constant.getIV();
+        String data = Constant.getParams(iv)
                 .setParams("iv", iv)
                 .setParams("mobile", mEtMobilePhone.getText().toString().trim())
                 .setParams("loan_amount", mEtLoanNum.getText().toString().trim())
@@ -191,7 +191,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(null != response.body()){
                     if(response.body().getCode() == 0){
                         LogUtil.e("result-->" + response.body().toString());
-                        SharePreUtil.putString(LoginActivity.this, GlobalData.MOBILE,
+                        SharePreUtil.putString(LoginActivity.this, Constant.MOBILE,
                                 mEtMobilePhone.getText().toString().trim());
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();

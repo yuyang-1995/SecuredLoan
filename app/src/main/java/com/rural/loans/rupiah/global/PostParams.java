@@ -5,43 +5,43 @@ import android.text.TextUtils;
 import com.rural.loans.rupiah.util.DesUtils;
 import com.rural.loans.rupiah.util.LogUtil;
 
-public class GrobalParams {
+public class PostParams {
 
 
     private StringBuilder sb = new StringBuilder("{");
 
     private String iv;
 
-    public GrobalParams(String iv){
+    public PostParams(String iv){
         this.iv = iv;
     }
 
-    public GrobalParams(){
+    public PostParams(){
 
     }
 
-    public GrobalParams setParams(String key, String value){
+    public PostParams setParams(String key, String value){
         String endodeKey = key;
         String encodeValue = value;
         sb.append("\"").append(endodeKey).append("\":\"").append(encodeValue).append("\",");
         return this;
     }
 
-    public GrobalParams setParams(String key, int value){
+    public PostParams setParams(String key, int value){
         String endodeKey = key;
         int encodeValue = value;
         sb.append("\"").append(endodeKey).append("\":\"").append(encodeValue).append("\",");
         return this;
     }
 
-    public GrobalParams setListParam(String key, String value){
+    public PostParams setListParam(String key, String value){
         String endodeKey = key;
         String encodeValue = value;
         sb.append("\"").append(endodeKey).append("\":").append(encodeValue).append(",");
         return this;
     }
 
-    public GrobalParams setListParam(String key, int value){
+    public PostParams setListParam(String key, int value){
         String endodeKey = key;
         int encodeValue = value;
         sb.append("\"").append(endodeKey).append("\":").append(encodeValue).append(",");

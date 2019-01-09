@@ -16,8 +16,8 @@ import com.google.gson.Gson;
 import com.rural.loans.rupiah.R;
 import com.rural.loans.rupiah.bean.InitBean;
 import com.rural.loans.rupiah.bean.ResponseBean;
-import com.rural.loans.rupiah.global.GlobalApi;
-import com.rural.loans.rupiah.global.GlobalData;
+import com.rural.loans.rupiah.global.RuralApi;
+import com.rural.loans.rupiah.global.Constant;
 import com.rural.loans.rupiah.product.ProductFragment;
 import com.rural.loans.rupiah.ui.LoadingDialog;
 import com.rural.loans.rupiah.ui.ProtocolDialog;
@@ -75,12 +75,12 @@ public class MainActivity extends AppCompatActivity {
         LoadingDialog.show(MainActivity.this, R.string.data_loading);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GlobalApi.BASE_URL)
+                .baseUrl(RuralApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         MainApi mainApi = retrofit.create(MainApi.class);
-        String iv = GlobalData.getIV();
-        String data = GlobalData.getParams(iv)
+        String iv = Constant.getIV();
+        String data = Constant.getParams(iv)
                 .setParams("company_name", getString(R.string.app_name))
                 .setParams("product_name", getString(R.string.app_name))
                 .build();
@@ -131,11 +131,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-            SharePreUtil.putString(MainActivity.this, GlobalData.EMAIL, mInitBean.getEmail());
-            SharePreUtil.putString(MainActivity.this, GlobalData.PROTOCOL, mInitBean.getPrivacy_policy());
+            SharePreUtil.putString(MainActivity.this, Constant.EMAIL, mInitBean.getEmail());
+            SharePreUtil.putString(MainActivity.this, Constant.PROTOCOL, mInitBean.getPrivacy_policy());
 
             if (!TextUtils.isEmpty(mInitBean.getPrivacy_policy()) &&
-                    !SharePreUtil.getBoolean(MainActivity.this, GlobalData.IS_SHOW_POLICY, false)) {
+                    !SharePreUtil.getBoolean(MainActivity.this, Constant.IS_SHOW_POLICY, false)) {
                 ProtocolDialog prolicyDialog = new ProtocolDialog();
                 Bundle bundle = new Bundle();
                 bundle.putString("url", mInitBean.getPrivacy_policy());

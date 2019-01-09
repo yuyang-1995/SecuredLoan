@@ -23,9 +23,9 @@ import com.google.gson.Gson;
 import com.rural.loans.rupiah.R;
 import com.rural.loans.rupiah.bean.IndexBean;
 import com.rural.loans.rupiah.bean.ResponseBean;
-import com.rural.loans.rupiah.global.GlobalApi;
-import com.rural.loans.rupiah.global.GlobalData;
-import com.rural.loans.rupiah.global.GlobalUpTotal;
+import com.rural.loans.rupiah.global.RuralApi;
+import com.rural.loans.rupiah.global.Constant;
+import com.rural.loans.rupiah.global.UpTotal;
 import com.rural.loans.rupiah.util.DesUtils;
 import com.rural.loans.rupiah.util.StringUtil;
 import com.rural.loans.rupiah.util.ToastUtil;
@@ -90,12 +90,12 @@ public class ProductFragment extends Fragment {
     private void pullProduct(){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GlobalApi.BASE_URL)
+                .baseUrl(RuralApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ProductApi productApi = retrofit.create(ProductApi.class);
-        String iv = GlobalData.getIV();
-        String data = GlobalData.getParams(iv)
+        String iv = Constant.getIV();
+        String data = Constant.getParams(iv)
                 .setParams("cid", cId)
                 .setParams("page", 1)
                 .build();
@@ -168,10 +168,11 @@ public class ProductFragment extends Fragment {
             viewHolder.mTvTitle.setText(StringUtil.getText(productBean.getName()));
             viewHolder.mtvMsg.setText(Html.fromHtml(mContext.getString(R.string.msg, StringUtil.getText(StringUtil.formatString(Integer.parseInt(productBean.getLoan_amount_max()))),
                     StringUtil.getText(productBean.getRate_interest()) + "%", StringUtil.getText(productBean.getPass_num()))));
+            viewHolder.mtvDesc.setText(StringUtil.getText(productBean.getDeclare()));
             viewHolder.mLlItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    GlobalUpTotal.upProductPosition(mContext,
+                    UpTotal.upProductPosition(mContext,
                             cateId, productBean.getId(), catePosition, i);
                     Intent intent = new Intent(mContext, ProductActivity.class);
                     intent.putExtra("productId", productBean.getId());
@@ -191,6 +192,7 @@ public class ProductFragment extends Fragment {
             private ImageView mIvLogo;
             private TextView mTvTitle;
             private TextView mtvMsg;
+            private TextView mtvDesc;
 
             public ViewHolder(View view){
                 super(view);
@@ -198,6 +200,7 @@ public class ProductFragment extends Fragment {
                 mIvLogo = view.findViewById(R.id.iv_logo);
                 mTvTitle = view.findViewById(R.id.tv_title);
                 mtvMsg = view.findViewById(R.id.tv_msg);
+                mtvDesc = view.findViewById(R.id.tv_desc);
             }
 
         }
