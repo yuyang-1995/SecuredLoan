@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Rural Loans</string>
+    <string name="app_name">Pinjaman Mango</string>
 
     <string name="please_input_loan_num">Harap masukkan jumlah pinjaman Anda</string>
     <string name="please_input_mobile_phone">Harap masukkan nomor telepon Anda</string>
@@ -33,7 +33,7 @@
     <string name="continues">Continue</string>
     <string name="cancle">Cancle</string>
     <string name="notification_error_ssl_cert_invalid">Sertifikat ssl tidak valid</string>
-    <string name="msg"><![CDATA[RP: <font color="#01e06d">%1$s</font>&nbsp;&nbsp;&nbsp;&nbsp;Lulus: <font color="#01e06d">%2$s</font>&nbsp;&nbsp;&nbsp;&nbsp;Bunga harian: <font color="#01e06d">%3$s</font>]]></string>
+    <string name="msg"><![CDATA[RP: <font color="#ffb600">%1$s</font>&nbsp;&nbsp;&nbsp;&nbsp;Lulus: <font color="#ffb600">%2$s</font>&nbsp;&nbsp;&nbsp;&nbsp;Bunga harian: <font color="#ffb600">%3$s</font>]]></string>
     <string name="agree">Setuju</string>
     <string name="reject">Tolak</string>
     <string name="bank">Kartu bank</string>

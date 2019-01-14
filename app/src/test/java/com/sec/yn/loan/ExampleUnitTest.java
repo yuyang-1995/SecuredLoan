@@ -1,4 +1,4 @@
-package com.rural.loans.rupiah;
+package com.pinjaman.mango.cash;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.rural.loans.rupiah;
+package com.pinjaman.mango.cash;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.rural.loans.rupiah", appContext.getPackageName());
+        assertEquals("com.pinjaman.mango.cash", appContext.getPackageName());
     }
 }

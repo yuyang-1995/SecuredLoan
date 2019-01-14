@@ -7,19 +7,22 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.rural.loans.rupiah"
+        applicationId "com.pinjaman.mango.cash"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 110
-        versionName "1.1.0"
+        versionName VERSION_NAME
+        versionCode Integer.parseInt(versionName.replace(".", ""))
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "server_api", SERVER_API)
+        buildConfigField("boolean", "is_log", IS_LOG)
+        buildConfigField("String", "app_no", APP_NO)
     }
     signingConfigs {
         release {
-            keyAlias 'RuralLoans'
-            keyPassword 'RuralLoans'
-            storeFile file('RuralLoans.jks')
-            storePassword 'RuralLoans'
+            keyAlias 'PinjamanMango'
+            keyPassword 'PinjamanMango'
+            storeFile file('PinjamanMango.jks')
+            storePassword 'PinjamanMango'
         }
     }
 
@@ -39,7 +42,7 @@ android {
                 jniDebuggable false
                 android.applicationVariants.all { variant ->
                     variant.outputs.all {
-                        outputFileName = "Rural_loans_Ff_${defaultConfig.versionCode}_${releaseTime()}.apk"
+                        outputFileName = "Pinjaman_Mango_${APP_NO.replace("\"","")}_${defaultConfig.versionCode}_${releaseTime()}.apk"
                     }
                 }
 
