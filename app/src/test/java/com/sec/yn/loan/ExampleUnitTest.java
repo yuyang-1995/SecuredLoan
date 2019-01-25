@@ -1,4 +1,4 @@
-package com.pinjaman.mango.cash;
+package com.rumah.kredit.loan;
 
 import org.junit.Test;
 
