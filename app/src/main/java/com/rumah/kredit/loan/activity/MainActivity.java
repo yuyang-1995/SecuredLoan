@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan.main;
+package com.rumah.kredit.loan.activity;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -15,11 +15,11 @@ import android.widget.ImageView;
 import com.google.gson.Gson;
 import com.rumah.kredit.loan.BuildConfig;
 import com.rumah.kredit.loan.R;
-import com.rumah.kredit.loan.banner.ConvenientBanner;
+import com.rumah.kredit.loan.api.MainApi;
 import com.rumah.kredit.loan.model.InitModel;
 import com.rumah.kredit.loan.model.ResponseModel;
 import com.rumah.kredit.loan.manager.Constant;
-import com.rumah.kredit.loan.product.ProductFragment;
+import com.rumah.kredit.loan.fragment.ProductFragment;
 import com.rumah.kredit.loan.dialog.LoadingDialog;
 import com.rumah.kredit.loan.dialog.ProtocolDialog;
 import com.rumah.kredit.loan.util.DesUtils;

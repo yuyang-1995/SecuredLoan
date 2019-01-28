@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan.main;
+package com.rumah.kredit.loan.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.rumah.kredit.loan.R;
 import com.rumah.kredit.loan.manager.Constant;
-import com.rumah.kredit.loan.product.WebViewActivity;
 import com.rumah.kredit.loan.util.AppUtils;
 import com.rumah.kredit.loan.util.SharePreUtil;
 

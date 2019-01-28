@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan.main;
+package com.rumah.kredit.loan.api;
 
 import com.rumah.kredit.loan.model.ResponseModel;
 
@@ -7,11 +7,11 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
-public interface MainApi {
-
+public interface LoginApi {
 
     @FormUrlEncoded
-    @POST("app.init")
-    Call<ResponseModel> pullInitData(@Field("iv") String iv, @Field("data") String data);
+    @POST("User.login")
+    Call<ResponseModel> login(@Field("iv") String iv, @Field("data") String data);
+
 
 }

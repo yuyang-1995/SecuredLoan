@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan.login;
+package com.rumah.kredit.loan.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +14,9 @@ import android.widget.Button;
 
 import com.rumah.kredit.loan.BuildConfig;
 import com.rumah.kredit.loan.R;
+import com.rumah.kredit.loan.api.LoginApi;
 import com.rumah.kredit.loan.model.ResponseModel;
 import com.rumah.kredit.loan.manager.Constant;
-import com.rumah.kredit.loan.main.MainActivity;
 import com.rumah.kredit.loan.dialog.LoadingDialog;
 import com.rumah.kredit.loan.util.LogUtil;
 import com.rumah.kredit.loan.util.NetUtil;

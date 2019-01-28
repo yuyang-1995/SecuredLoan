@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan.product;
+package com.rumah.kredit.loan.activity;
 
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -24,7 +24,6 @@ import android.widget.TextView;
 
 import com.rumah.kredit.loan.R;
 import com.rumah.kredit.loan.util.AppUtils;
-import com.rumah.kredit.loan.util.LogUtil;
 
 import java.net.URISyntaxException;
 

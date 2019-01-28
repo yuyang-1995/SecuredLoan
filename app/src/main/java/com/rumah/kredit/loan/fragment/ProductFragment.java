@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan.product;
+package com.rumah.kredit.loan.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,16 +15,16 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.rumah.kredit.loan.BuildConfig;
 import com.rumah.kredit.loan.R;
-import com.rumah.kredit.loan.banner.ConvenientBanner;
+import com.rumah.kredit.loan.activity.ProductActivity;
+import com.rumah.kredit.loan.activity.WebViewActivity;
+import com.rumah.kredit.loan.banner.Banner;
 import com.rumah.kredit.loan.banner.holder.CBViewHolderCreator;
 import com.rumah.kredit.loan.banner.listener.OnItemClickListener;
 import com.rumah.kredit.loan.manager.BannerHolderView;
@@ -33,15 +33,13 @@ import com.rumah.kredit.loan.model.IndexModel;
 import com.rumah.kredit.loan.model.ResponseModel;
 import com.rumah.kredit.loan.manager.Constant;
 import com.rumah.kredit.loan.manager.UpTotal;
+import com.rumah.kredit.loan.api.ProductApi;
 import com.rumah.kredit.loan.util.DesUtils;
-import com.rumah.kredit.loan.util.LogUtil;
 import com.rumah.kredit.loan.util.StringUtil;
 import com.rumah.kredit.loan.util.ToastUtil;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -230,7 +228,7 @@ public class ProductFragment extends Fragment {
                     }
                 }, imageList)
                         .setPageIndicator(new int[]{R.drawable.circle_e5, R.drawable.circle_fd9e02})
-                        .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL)
+                        .setPageIndicatorAlign(Banner.PageIndicatorAlign.CENTER_HORIZONTAL)
                         .setOnItemClickListener(new OnItemClickListener() {
                             @Override
                             public void onItemClick(int position) {
@@ -284,7 +282,7 @@ public class ProductFragment extends Fragment {
         }
 
         static class HeaderHolder extends RecyclerView.ViewHolder{
-            private ConvenientBanner mBanner;
+            private Banner mBanner;
 
             public HeaderHolder(View view){
                 super(view);

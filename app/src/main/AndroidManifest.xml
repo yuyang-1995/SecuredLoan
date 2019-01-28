@@ -13,7 +13,7 @@
         android:name=".manager.MyApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login.LaunchActivity"
+        <activity android:name=".activity.LaunchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/LaunchTheme">
             <intent-filter>
@@ -23,19 +23,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".login.LoginActivity"
+        <activity android:name=".activity.LoginActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".main.MainActivity"
+        <activity android:name=".activity.MainActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".main.MyActivity"
+        <activity android:name=".activity.MyActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".product.ProductActivity"
+        <activity android:name=".activity.ProductActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".product.WebViewActivity"
+        <activity android:name=".activity.WebViewActivity"
             android:screenOrientation="portrait"/>
 
 

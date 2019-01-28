@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan.product;
+package com.rumah.kredit.loan.api;
 
 import com.rumah.kredit.loan.model.ResponseModel;
 

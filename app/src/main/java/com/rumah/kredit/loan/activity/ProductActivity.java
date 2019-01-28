@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan.product;
+package com.rumah.kredit.loan.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.rumah.kredit.loan.BuildConfig;
 import com.rumah.kredit.loan.R;
@@ -25,6 +24,7 @@ import com.rumah.kredit.loan.model.ResponseModel;
 import com.rumah.kredit.loan.manager.Constant;
 import com.rumah.kredit.loan.manager.UpTotal;
 import com.rumah.kredit.loan.dialog.LoadingDialog;
+import com.rumah.kredit.loan.api.ProductApi;
 import com.rumah.kredit.loan.util.AppUtils;
 import com.rumah.kredit.loan.util.DesUtils;
 import com.rumah.kredit.loan.util.DeviceUtil;

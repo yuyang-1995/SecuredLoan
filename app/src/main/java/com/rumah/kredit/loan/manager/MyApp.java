@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import com.rumah.kredit.loan.BuildConfig;
-import com.rumah.kredit.loan.main.MainActivity;
+import com.rumah.kredit.loan.activity.MainActivity;
 import com.rumah.kredit.loan.util.LogUtil;
 
 public class MyApp extends Application {
@@ -21,9 +21,6 @@ public class MyApp extends Application {
         super.onCreate();
 
         mContext = this;
-
-        LogUtil.isDebug = BuildConfig.is_log;
-
 
 
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {

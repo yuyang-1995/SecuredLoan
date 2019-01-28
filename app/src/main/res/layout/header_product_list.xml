@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.rumah.kredit.loan.banner.ConvenientBanner
+    <com.rumah.kredit.loan.banner.Banner
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="120dp"

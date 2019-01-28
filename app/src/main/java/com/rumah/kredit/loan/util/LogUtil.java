@@ -2,6 +2,8 @@ package com.rumah.kredit.loan.util;
 
 import android.util.Log;
 
+import com.rumah.kredit.loan.BuildConfig;
+
 
 public class LogUtil {
 
@@ -12,7 +14,7 @@ public class LogUtil {
     }
 
 
-    public static boolean isDebug = true;
+    public static boolean isDebug = BuildConfig.is_log;
     private static final String TAG = "DEBUG_TAG";
     private static int LOG_MAXLENGTH = 2000;
 
