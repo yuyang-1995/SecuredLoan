@@ -16,6 +16,7 @@ android {
         buildConfigField("String", "server_api", SERVER_API)
         buildConfigField("boolean", "is_log", IS_LOG)
         buildConfigField("String", "app_no", APP_NO)
+        buildConfigField("String", "af_key", AF_KEY)
     }
     signingConfigs {
         release {
@@ -42,7 +43,7 @@ android {
                 jniDebuggable false
                 android.applicationVariants.all { variant ->
                     variant.outputs.all {
-                        outputFileName = "Rumah_Kredit_${APP_NO.replace("\"","")}_${defaultConfig.versionCode}_${releaseTime()}.apk"
+                        outputFileName = "Selesaikan_Kesulitan_${APP_NO.replace("\"","")}_${defaultConfig.versionCode}_${releaseTime()}.apk"
                     }
                 }
 
@@ -65,4 +66,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'com.appsflyer:af-android-sdk:4.8.6@aar'
+    implementation 'com.android.installreferrer:installreferrer:1.0'
 }

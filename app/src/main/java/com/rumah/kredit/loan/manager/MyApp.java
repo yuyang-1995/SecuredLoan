@@ -5,9 +5,15 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.appsflyer.AppsFlyerConversionListener;
+import com.appsflyer.AppsFlyerLib;
 import com.rumah.kredit.loan.BuildConfig;
+import com.rumah.kredit.loan.activity.LaunchActivity;
 import com.rumah.kredit.loan.activity.MainActivity;
+import com.rumah.kredit.loan.util.DeviceUtil;
 import com.rumah.kredit.loan.util.LogUtil;
+
+import java.util.Map;
 
 public class MyApp extends Application {
 
@@ -22,6 +28,7 @@ public class MyApp extends Application {
 
         mContext = this;
 
+        initAppsFlyer();
 
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
@@ -67,6 +74,36 @@ public class MyApp extends Application {
 
 
 
+    /**
+     * 初始化AppsFlyer
+     */
+    private void initAppsFlyer(){
+
+        AppsFlyerConversionListener conversionListener = new AppsFlyerConversionListener() {
+            @Override
+            public void onInstallConversionDataLoaded(Map<String, String> map) { }
+
+            @Override
+            public void onInstallConversionFailure(String s) { }
+
+            @Override
+            public void onAppOpenAttribution(Map<String, String> map) {
+
+            }
+
+            @Override
+            public void onAttributionFailure(String s) {
+            }
+        };
+        AppsFlyerLib.getInstance().init(BuildConfig.af_key, conversionListener, getApplicationContext());
+        AppsFlyerLib.getInstance().setImeiData(DeviceUtil.getUniqueId(this));
+        AppsFlyerLib.getInstance().setAndroidIdData(DeviceUtil.getAndroidId(this));
+        AppsFlyerLib.getInstance().startTracking(this, BuildConfig.af_key);
+        //后台运行会话追踪
+        AppsFlyerLib.getInstance().reportTrackSession(this);
+        LogUtil.e("appsFlyerUID--->" + AppsFlyerLib.getInstance().getAppsFlyerUID(this));
+        AppsFlyerLib.getInstance().setDebugLog(false);
+    }
 
 
 }
