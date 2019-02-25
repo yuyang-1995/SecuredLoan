@@ -20,10 +20,10 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'RumahKredit'
-            keyPassword 'RumahKredit2019'
-            storeFile file('RumahKredit.jks')
-            storePassword 'RumahKredit2019'
+            keyAlias 'PerangkatLunakAnda'
+            keyPassword 'PerangkatLunakAnda2019'
+            storeFile file('PerangkatLunakAnda.jks')
+            storePassword 'PerangkatLunakAnda2019'
         }
     }
 
@@ -43,7 +43,7 @@ android {
                 jniDebuggable false
                 android.applicationVariants.all { variant ->
                     variant.outputs.all {
-                        outputFileName = "Selesaikan_Kesulitan_${APP_NO.replace("\"","")}_${defaultConfig.versionCode}_${releaseTime()}.apk"
+                        outputFileName = "Perangkat_Lunak_Anda_${APP_NO.replace("\"","")}_${defaultConfig.versionCode}_${releaseTime()}.apk"
                     }
                 }
 
