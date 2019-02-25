@@ -93,7 +93,7 @@
 # A resource is loaded with a relative path so the package of this class must be preserved.
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 
--keep public class com.rumah.kredit.loan.model.** {*;}
+-keep public class com.perangkat.lunak.anda.model.** {*;}
 
 -keep class com.appsflyer.** { *; }
 

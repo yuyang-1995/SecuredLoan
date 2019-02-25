@@ -7,7 +7,7 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.rumah.kredit.loan"
+        applicationId "com.perangkat.lunak.anda"
         minSdkVersion 15
         targetSdkVersion 28
         versionName VERSION_NAME

@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan;
+package com.perangkat.lunak.anda;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.rumah.kredit.loan", appContext.getPackageName());
+        assertEquals("com.perangkat.lunak.anda", appContext.getPackageName());
     }
 }

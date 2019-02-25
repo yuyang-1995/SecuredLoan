@@ -1,4 +1,4 @@
-package com.rumah.kredit.loan;
+package com.perangkat.lunak.anda;
 
 import org.junit.Test;
 

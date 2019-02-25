@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Selesaikan Kesulitan</string>
+    <string name="app_name">Perangkat Lunak Anda</string>
 
     <string name="please_input_loan_num">Harap masukkan jumlah pinjaman Anda</string>
     <string name="please_input_mobile_phone">Harap masukkan nomor telepon Anda</string>
