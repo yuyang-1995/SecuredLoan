@@ -4,10 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.damai.kekayaan.anda.R;
 import com.damai.kekayaan.anda.banner.holder.Holder;
-import com.damai.kekayaan.anda.model.GlideApp;
+import com.squareup.picasso.Picasso;
 
 
 public class BannerHolderView implements Holder<String> {
@@ -22,7 +21,7 @@ public class BannerHolderView implements Holder<String> {
 
     @Override
     public void UpdateUI(Context context, final int position, String data) {
-        GlideApp.with(context)
+        Picasso.get()
                 .load(data)
                 .placeholder(R.mipmap.icon_placeholder_banner)
                 .into(imageView);

@@ -20,7 +20,6 @@ import com.damai.kekayaan.anda.manager.AppsFlyerEvent;
 import com.google.gson.Gson;
 import com.damai.kekayaan.anda.BuildConfig;
 import com.damai.kekayaan.anda.R;
-import com.damai.kekayaan.anda.model.GlideApp;
 import com.damai.kekayaan.anda.model.ProductModel;
 import com.damai.kekayaan.anda.model.ResponseModel;
 import com.damai.kekayaan.anda.manager.Constant;
@@ -33,6 +32,7 @@ import com.damai.kekayaan.anda.util.DeviceUtil;
 import com.damai.kekayaan.anda.util.LogUtil;
 import com.damai.kekayaan.anda.util.StringUtil;
 import com.damai.kekayaan.anda.util.ToastUtil;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -205,7 +205,7 @@ public class ProductActivity extends AppCompatActivity {
             mTvDown.setVisibility(View.VISIBLE);
 
             mTvProductName.setText(StringUtil.getText(mProductBean.getName()));
-            GlideApp.with(ProductActivity.this)
+            Picasso.get()
                     .load(mProductBean.getLogo())
                     .into(mIvLogo);
 

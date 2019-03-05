@@ -28,7 +28,6 @@ import com.damai.kekayaan.anda.banner.Banner;
 import com.damai.kekayaan.anda.banner.holder.CBViewHolderCreator;
 import com.damai.kekayaan.anda.banner.listener.OnItemClickListener;
 import com.damai.kekayaan.anda.manager.BannerHolderView;
-import com.damai.kekayaan.anda.model.GlideApp;
 import com.damai.kekayaan.anda.model.IndexModel;
 import com.damai.kekayaan.anda.model.ResponseModel;
 import com.damai.kekayaan.anda.manager.Constant;
@@ -37,6 +36,7 @@ import com.damai.kekayaan.anda.api.ProductApi;
 import com.damai.kekayaan.anda.util.DesUtils;
 import com.damai.kekayaan.anda.util.StringUtil;
 import com.damai.kekayaan.anda.util.ToastUtil;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -184,14 +184,14 @@ public class ProductFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+        public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder viewHolder, int i) {
             if(viewHolder instanceof ViewHolder){
                 if(catePosition == 0){
                     i = i - 1;
                 }
                 final int productPos = i;
                 final IndexModel.ProductBean productBean = mProductBeanList.get(i);
-                GlideApp.with(mContext)
+                Picasso.get()
                         .load(productBean.getLogo())
                         .into(((ViewHolder) viewHolder).mIvLogo);
                 ((ViewHolder) viewHolder).mTvTitle.setText(StringUtil.getText(productBean.getName()));
