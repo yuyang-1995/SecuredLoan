@@ -1,4 +1,4 @@
-package com.perangkat.lunak.anda;
+package com.damai.kekayaan.anda;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.perangkat.lunak.anda", appContext.getPackageName());
+        assertEquals("com.damai.kekayaan.anda", appContext.getPackageName());
     }
 }

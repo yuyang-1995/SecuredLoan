@@ -7,25 +7,39 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.perangkat.lunak.anda"
+        applicationId "com.damai.kekayaan.anda"
         minSdkVersion 15
         targetSdkVersion 28
         versionName VERSION_NAME
         versionCode Integer.parseInt(versionName.replace(".", ""))
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "server_api", SERVER_API)
-        buildConfigField("boolean", "is_log", IS_LOG)
-        buildConfigField("String", "app_no", APP_NO)
-        buildConfigField("String", "af_key", AF_KEY)
     }
     signingConfigs {
         release {
-            keyAlias 'PerangkatLunakAnda'
-            keyPassword 'PerangkatLunakAnda2019'
-            storeFile file('PerangkatLunakAnda.jks')
-            storePassword 'PerangkatLunakAnda2019'
+            keyAlias 'DamaiKekayaan'
+            keyPassword 'DamaiKekayaan2019'
+            storeFile file('DamaiKekayaan.jks')
+            storePassword 'DamaiKekayaan2019'
         }
     }
+
+    productFlavors{
+        damaikekayaan{
+            dimension "default"
+        }
+        google{
+            resValue('string', 'app_name', 'Damai Kekayaan')
+
+            buildConfigField("String", "server_api", SERVER_API)
+            buildConfigField("boolean", "is_log", IS_LOG)
+            buildConfigField("String", "app_no", APP_NO)
+            buildConfigField("String", "af_key", AF_KEY)
+
+            dimension "product"
+        }
+        flavorDimensions "default", "product"
+    }
+
 
 
     buildTypes {
@@ -42,8 +56,10 @@ android {
                 debuggable false
                 jniDebuggable false
                 android.applicationVariants.all { variant ->
-                    variant.outputs.all {
-                        outputFileName = "Perangkat_Lunak_Anda_${APP_NO.replace("\"","")}_${defaultConfig.versionCode}_${releaseTime()}.apk"
+                    variant.outputs.all { output ->
+                        def outputFile = output.outputFile
+                        def fileName = outputFile.name
+                        outputFileName = fileName.replace("-", "_").replace("release.apk", "${APP_NO.replace("\"","")}_${defaultConfig.versionCode}_${releaseTime()}.apk")
                     }
                 }
 

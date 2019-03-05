@@ -1,4 +1,4 @@
-package com.perangkat.lunak.anda;
+package com.damai.kekayaan.anda;
 
 import org.junit.Test;
 
