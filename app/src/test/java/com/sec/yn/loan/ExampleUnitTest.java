@@ -1,4 +1,4 @@
-package com.damai.kekayaan.anda;
+package com.penyelesaian.xjd.hutang;
 
 import org.junit.Test;
 

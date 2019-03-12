@@ -1,4 +1,4 @@
-package com.damai.kekayaan.anda;
+package com.penyelesaian.xjd.hutang;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.damai.kekayaan.anda", appContext.getPackageName());
+        assertEquals("com.penyelesaian.xjd.hutang", appContext.getPackageName());
     }
 }

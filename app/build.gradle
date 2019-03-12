@@ -7,7 +7,7 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.damai.kekayaan.anda"
+        applicationId "com.penyelesaian.xjd.hutang"
         minSdkVersion 15
         targetSdkVersion 28
         versionName VERSION_NAME
@@ -16,19 +16,19 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'DamaiKekayaan'
-            keyPassword 'DamaiKekayaan2019'
-            storeFile file('DamaiKekayaan.jks')
-            storePassword 'DamaiKekayaan2019'
+            keyAlias 'PenyelesaianHutang'
+            keyPassword 'PenyelesaianHutang2019'
+            storeFile file('PenyelesaianHutang.jks')
+            storePassword 'PenyelesaianHutang2019'
         }
     }
 
     productFlavors{
-        damaikekayaan{
+        penyelesaianhutang{
             dimension "default"
         }
         google{
-            resValue('string', 'app_name', 'Damai Kekayaan')
+            resValue('string', 'app_name', 'Penyelesaian Hutang')
 
             buildConfigField("String", "server_api", SERVER_API)
             buildConfigField("boolean", "is_log", IS_LOG)
