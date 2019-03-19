@@ -7,7 +7,7 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.pay.tetap.wddk"
+        applicationId "com.jinrong.pera.utang"
         minSdkVersion 15
         targetSdkVersion 28
         versionName VERSION_NAME
@@ -16,19 +16,19 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'PayTetap'
-            keyPassword 'PayTetap2019'
-            storeFile file('PayTetap.jks')
-            storePassword 'PayTetap2019'
+            keyAlias 'PeraUtang'
+            keyPassword 'PeraUtang2019'
+            storeFile file('PeraUtang.jks')
+            storePassword 'PeraUtang2019'
         }
     }
 
     productFlavors{
-        paytetap{
+        perautang{
             dimension "default"
         }
         google{
-            resValue('string', 'app_name', 'Pay Tetap')
+            resValue('string', 'app_name', 'Pera Utang')
 
             buildConfigField("String", "server_api", SERVER_API)
             buildConfigField("boolean", "is_log", IS_LOG)
