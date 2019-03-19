@@ -7,7 +7,7 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.jinrong.pera.utang"
+        applicationId "com.byaman.pinm.wydk"
         minSdkVersion 15
         targetSdkVersion 28
         versionName VERSION_NAME
@@ -16,19 +16,19 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'PeraUtang'
-            keyPassword 'PeraUtang2019'
-            storeFile file('PeraUtang.jks')
-            storePassword 'PeraUtang2019'
+            keyAlias 'NyamanPinm'
+            keyPassword 'NyamanPinm2019'
+            storeFile file('NyamanPinm.jks')
+            storePassword 'NyamanPinm2019'
         }
     }
 
     productFlavors{
-        perautang{
+        nyamanpinm{
             dimension "default"
         }
         google{
-            resValue('string', 'app_name', 'Pera Utang')
+            resValue('string', 'app_name', 'Nyaman Pinm')
 
             buildConfigField("String", "server_api", SERVER_API)
             buildConfigField("boolean", "is_log", IS_LOG)
