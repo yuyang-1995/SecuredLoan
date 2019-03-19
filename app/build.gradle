@@ -7,7 +7,7 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.penyelesaian.xjd.hutang"
+        applicationId "com.pay.tetap.wddk"
         minSdkVersion 15
         targetSdkVersion 28
         versionName VERSION_NAME
@@ -16,19 +16,19 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'PenyelesaianHutang'
-            keyPassword 'PenyelesaianHutang2019'
-            storeFile file('PenyelesaianHutang.jks')
-            storePassword 'PenyelesaianHutang2019'
+            keyAlias 'PayTetap'
+            keyPassword 'PayTetap2019'
+            storeFile file('PayTetap.jks')
+            storePassword 'PayTetap2019'
         }
     }
 
     productFlavors{
-        penyelesaianhutang{
+        paytetap{
             dimension "default"
         }
         google{
-            resValue('string', 'app_name', 'Penyelesaian Hutang')
+            resValue('string', 'app_name', 'Pay Tetap')
 
             buildConfigField("String", "server_api", SERVER_API)
             buildConfigField("boolean", "is_log", IS_LOG)
