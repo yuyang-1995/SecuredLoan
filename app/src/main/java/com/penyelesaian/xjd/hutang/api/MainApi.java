@@ -14,4 +14,7 @@ public interface MainApi {
     @POST("app.init")
     Call<ResponseModel> pullInitData(@Field("iv") String iv, @Field("data") String data);
 
+
+
+
 }

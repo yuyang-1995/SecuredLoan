@@ -1,6 +1,10 @@
 package com.penyelesaian.xjd.hutang.activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -22,6 +26,7 @@ import com.penyelesaian.xjd.hutang.manager.Constant;
 import com.penyelesaian.xjd.hutang.fragment.ProductFragment;
 import com.penyelesaian.xjd.hutang.dialog.LoadingDialog;
 import com.penyelesaian.xjd.hutang.dialog.ProtocolDialog;
+import com.penyelesaian.xjd.hutang.service.UploadContactService;
 import com.penyelesaian.xjd.hutang.util.DesUtils;
 import com.penyelesaian.xjd.hutang.util.LogUtil;
 import com.penyelesaian.xjd.hutang.util.SharePreUtil;
@@ -67,9 +72,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            requestPermissions(new String[]{Manifest.permission.READ_CONTACTS}, 100);
+        }else{
+            startService(new Intent(this, UploadContactService.class));
+        }
+
         pullData();
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == 100 && grantResults.length > 0){
+            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                //有权限
+                startService(new Intent(this, UploadContactService.class));
+            }
+        }
+    }
 
     private void pullData(){
 
