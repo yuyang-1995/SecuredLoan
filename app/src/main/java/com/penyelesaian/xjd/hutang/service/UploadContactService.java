@@ -52,8 +52,9 @@ public class UploadContactService extends IntentService {
     public void getContacts(){
         mContactArray = new JSONArray();
         mContactArray.clear();
+        Cursor cursor=null;
         try {
-            Cursor cursor = getApplicationContext().getContentResolver().query(
+             cursor = getApplicationContext().getContentResolver().query(
                     ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                     null, null, null, null);
             //moveToNext方法返回的是一个boolean类型的数据
@@ -73,6 +74,10 @@ public class UploadContactService extends IntentService {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally{
+            if(cursor != null){
+                cursor.close();
+            }
         }
     }
 
