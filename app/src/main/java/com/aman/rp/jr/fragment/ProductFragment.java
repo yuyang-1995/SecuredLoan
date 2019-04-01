@@ -196,7 +196,8 @@ public class ProductFragment extends Fragment {
                         .into(((ViewHolder) viewHolder).mIvLogo);
                 ((ViewHolder) viewHolder).mTvTitle.setText(StringUtil.getText(productBean.getName()));
                 ((ViewHolder) viewHolder).mtvMsg.setText(Html.fromHtml(mContext.getString(R.string.msg, StringUtil.getText(StringUtil.formatString(Integer.parseInt(productBean.getLoan_amount_max()))),
-                        StringUtil.getText(productBean.getRate_interest()) + "%", StringUtil.getText(productBean.getPass_num()))));
+                        StringUtil.getText(productBean.getRate_interest()) + "%")));
+                ((ViewHolder) viewHolder).mtvMsgSec.setText(Html.fromHtml(mContext.getString(R.string.msg_sec,StringUtil.getText(productBean.getPass_num()))));
                 ((ViewHolder) viewHolder).mtvDesc.setText(StringUtil.getText(productBean.getDeclare()));
                 ((ViewHolder) viewHolder).mLlItem.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -269,6 +270,7 @@ public class ProductFragment extends Fragment {
             private TextView mTvTitle;
             private TextView mtvMsg;
             private TextView mtvDesc;
+            private  TextView mtvMsgSec;
 
             public ViewHolder(View view){
                 super(view);
@@ -277,6 +279,7 @@ public class ProductFragment extends Fragment {
                 mTvTitle = view.findViewById(R.id.tv_title);
                 mtvMsg = view.findViewById(R.id.tv_msg);
                 mtvDesc = view.findViewById(R.id.tv_desc);
+                mtvMsgSec=view.findViewById(R.id.tv_msg_second);
             }
 
         }
