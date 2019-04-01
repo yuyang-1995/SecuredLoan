@@ -1,4 +1,4 @@
-package com.penyelesaian.xjd.hutang;
+package com.aman.rp.jr;
 
 import org.junit.Test;
 

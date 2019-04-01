@@ -7,7 +7,7 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.byaman.pinm.wydk"
+        applicationId "com.aman.rp.jr"
         minSdkVersion 15
         targetSdkVersion 28
         versionName VERSION_NAME

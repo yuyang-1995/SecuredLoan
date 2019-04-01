@@ -1,4 +1,4 @@
-package com.penyelesaian.xjd.hutang;
+package com.aman.rp.jr;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.penyelesaian.xjd.hutang", appContext.getPackageName());
+        assertEquals("com.aman.rp.jr", appContext.getPackageName());
     }
 }
