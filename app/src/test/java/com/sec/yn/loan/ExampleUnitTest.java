@@ -1,4 +1,4 @@
-package com.aman.rp.jr;
+package com.zsd.tunai.dompet;
 
 import org.junit.Test;
 

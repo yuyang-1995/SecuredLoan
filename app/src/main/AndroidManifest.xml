@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aman.rp.jr">
+    package="com.zsd.tunai.dompet">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
@@ -13,10 +13,10 @@
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name="com.aman.rp.jr.manager.MyApp"
+        android:name="com.zsd.tunai.dompet.manager.MyApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.aman.rp.jr.activity.LaunchActivity"
+        <activity android:name="com.zsd.tunai.dompet.activity.LaunchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/LaunchTheme">
             <intent-filter>
@@ -26,19 +26,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.aman.rp.jr.activity.LoginActivity"
+        <activity android:name="com.zsd.tunai.dompet.activity.LoginActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="com.aman.rp.jr.activity.MainActivity"
+        <activity android:name="com.zsd.tunai.dompet.activity.MainActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="com.aman.rp.jr.activity.MyActivity"
+        <activity android:name="com.zsd.tunai.dompet.activity.MyActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="com.aman.rp.jr.activity.ProductActivity"
+        <activity android:name="com.zsd.tunai.dompet.activity.ProductActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="com.aman.rp.jr.activity.WebViewActivity"
+        <activity android:name="com.zsd.tunai.dompet.activity.WebViewActivity"
             android:screenOrientation="portrait"/>
 
         <receiver android:name="com.appsflyer.SingleInstallBroadcastReceiver" android:exported="true">
@@ -47,7 +47,7 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.aman.rp.jr.service.UploadContactService"/>
+        <service android:name="com.zsd.tunai.dompet.service.UploadContactService"/>
 
     </application>
 
