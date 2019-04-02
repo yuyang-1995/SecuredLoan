@@ -40,7 +40,4 @@ public class LaunchActivity extends AppCompatActivity {
 
     }
 
-
-
-
 }
