@@ -1,4 +1,4 @@
-package com.zsd.tunai.dompet;
+package com.pecah.kan.uangnya;
 
 import org.junit.Test;
 

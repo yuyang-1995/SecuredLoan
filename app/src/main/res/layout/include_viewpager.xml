@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <com.zsd.tunai.dompet.banner.view.CBLoopViewPager
+        <com.pecah.kan.uangnya.banner.view.CBLoopViewPager
             android:id="@+id/cbLoopViewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zsd.tunai.dompet">
+    package="com.pecah.kan.uangnya">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
@@ -12,11 +12,11 @@
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="Tunai Dompet"
-        android:name="com.zsd.tunai.dompet.manager.MyApp"
+        android:label="Pecahkan Uangnya"
+        android:name="com.pecah.kan.uangnya.manager.MyApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zsd.tunai.dompet.activity.LaunchActivity"
+        <activity android:name="com.pecah.kan.uangnya.activity.LaunchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/LaunchTheme">
             <intent-filter>
@@ -26,19 +26,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.zsd.tunai.dompet.activity.LoginActivity"
+        <activity android:name="com.pecah.kan.uangnya.activity.LoginActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="com.zsd.tunai.dompet.activity.MainActivity"
+        <activity android:name="com.pecah.kan.uangnya.activity.MainActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="com.zsd.tunai.dompet.activity.MyActivity"
+        <activity android:name="com.pecah.kan.uangnya.activity.MyActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="com.zsd.tunai.dompet.activity.ProductActivity"
+        <activity android:name="com.pecah.kan.uangnya.activity.ProductActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="com.zsd.tunai.dompet.activity.WebViewActivity"
+        <activity android:name="com.pecah.kan.uangnya.activity.WebViewActivity"
             android:screenOrientation="portrait"/>
 
         <receiver android:name="com.appsflyer.SingleInstallBroadcastReceiver" android:exported="true">
@@ -47,7 +47,7 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.zsd.tunai.dompet.service.UploadContactService"/>
+        <service android:name="com.pecah.kan.uangnya.service.UploadContactService"/>
 
     </application>
 

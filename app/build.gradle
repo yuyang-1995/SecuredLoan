@@ -7,7 +7,7 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.zsd.tunai.dompet"
+        applicationId "com.pecah.kan.uangnya"
         minSdkVersion 15
         targetSdkVersion 28
         versionName VERSION_NAME
@@ -16,19 +16,19 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'Tunaidompet'
-            keyPassword 'Tunaidompet2019'
-            storeFile file('Tunaidompet.jks')
-            storePassword 'Tunaidompet2019'
+            keyAlias 'Pecahkanuangnya'
+            keyPassword 'Pecahkanuangnya2019'
+            storeFile file('Pecahkanuangnya.jks')
+            storePassword 'Pecahkanuangnya2019'
         }
     }
 
     productFlavors{
-        Tunaidompet{
+        pecahkanuangnya{
             dimension "default"
         }
         google{
-            resValue('string', 'app_name', 'Tunai Dompet')
+            resValue('string', 'app_name', 'Pecahkan Uangnya')
 
             buildConfigField("String", "server_api", SERVER_API)
             buildConfigField("boolean", "is_log", IS_LOG)

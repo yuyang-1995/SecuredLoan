@@ -1,4 +1,4 @@
-package com.zsd.tunai.dompet;
+package com.pecah.kan.uangnya;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.zsd.tunai.dompet", appContext.getPackageName());
+        assertEquals("com.pecah.kan.uangnya", appContext.getPackageName());
     }
 }
